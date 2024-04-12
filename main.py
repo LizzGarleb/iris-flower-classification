@@ -1,27 +1,33 @@
-from model import knn, iris
+import pandas as pd
+from functions import knn_predict
+from tkinter import filedialog
 
 while True:
-    # Get user input
-    user_input = input(
-        "Enter the sepal length, sepal width, petal length, and petal width \nfor each flower, separated by spaces. Enter 'q' to quit: ")
+	# Get user input
+	initial_msg = input("Would you like to import a file? (y/n): ")
+	if initial_msg.lower() == 'y':
+		file_path = filedialog.askopenfilename()
+		data = pd.read_csv(file_path)
+		x_new = data.values.tolist()
 
-    if user_input.lower() == 'q' or user_input.lower() == 'quit':
-        print("Goodbye!")
-        break
+		# Call the knn_predict function from functions.py
+		knn_predict(x_new)
 
-    # Split the input string into a list of strings, then convert each string to a float
-    x_new = [float(x) for x in user_input.split()]
+	else:
+		user_input = input(
+			"\nEnter the sepal length, sepal width, petal length, and petal width \nfor each flower, separated by spaces. Enter 'q' to quit: ")
 
-    if len(x_new) % 4 == 0:
+		if user_input.lower() == 'q' or user_input.lower() == 'quit':
+			print("\nGoodbye!\n")
+			break
 
-        # Split the list into sublists of 4 numbers each
-        x_new = [x_new[i:i+4] for i in range(0, len(x_new), 4)]
+		# Split the input string into a list of strings, then convert each string to a float
+		x_new = [float(x) for x in user_input.split()]
 
-        flower_names = []
-        for x in x_new:
-            prediction = knn.predict([x])
-            flower_name = iris['target_names'][prediction]
-            flower_names.append(flower_name[0])
-        print('lol')
-        print(f"\nBased on your input, these are the types of the iris flowers: {
-              ', '.join(flower_names)}\n")
+		if len(x_new) % 4 == 0:
+
+			# Split the list into sublists of 4 numbers each
+			x_new = [x_new[i:i+4] for i in range(0, len(x_new), 4)]
+
+			# Call the knn_predict function from functions.py
+			knn_predict(x_new)
