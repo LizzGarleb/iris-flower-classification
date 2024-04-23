@@ -4,6 +4,7 @@ import numpy as np
 import tensorflow as tf
 from keras.models import Sequential, save_model, load_model
 from keras.layers import Conv2D, MaxPooling2D, Dense, Flatten
+from tkinter import filedialog, Tk
 import os
 
 class ImageModel:
@@ -19,6 +20,7 @@ class ImageModel:
         _create_model(input_shape): Create and return the CNN model architecture.
         compile_and_train(train_data, val_data, logdir='logs'): Compile and train the CNN model
           using the provided training and validation datasets.
+        img_input(self): Loads an image from the user's computer and returns the path.
         save_model_and_history(model_path='models/image_model.h5'): Save
           the trained model, accuracy and loss plots, and model summary to the specified
           paths.
@@ -139,6 +141,19 @@ class ImageModel:
             2: 'virginica'
         }
         return flower_names[int(predictions)]
+
+    def img_input(self):
+        """
+        Open a file dialog to allow the user to select an image file.
+        
+        Returns:
+            str: Path to the selected image file.
+        """
+        root = Tk()
+        root.withdraw()
+        file_path = filedialog.askopenfilename()
+        root.destroy()
+        return file_path
 
     def summary(self):
         """
