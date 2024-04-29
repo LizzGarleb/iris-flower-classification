@@ -135,12 +135,10 @@ class ImageModel:
         image = np.expand_dims(image, axis=0)
         predictions = model.predict(image)
         print(predictions)
-        flower_names = {
-            0: 'setosa',
-            1: 'versicolor',
-            2: 'virginica'
-        }
-        return flower_names[int(predictions)]
+        if predictions > 0.5:
+            return 'versicolor'
+        else:
+            return 'setosa'
 
     def img_input(self):
         """
