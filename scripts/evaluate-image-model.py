@@ -3,29 +3,27 @@ from modules.imageModel.imageModel import ImageModel
 from modules.imageModel.dataHandler import DataHandler
 
 """
-Evaluate the ImageModel using test data and calculate precision, recall, and accuracy metrics.
+Script for evaluating a trained image classification model using precision, recall, and binary accuracy metrics.
 
-Imports:
-    - Precision: Keras metric for precision calculation.
-    - Recall: Keras metric for recall calculation.
-    - BinaryAccuracy: Keras metric for binary accuracy calculation.
-    - ImageModel: Custom class for the image classification model.
-    - DataHandler: Custom class for handling image data loading and preprocessing.
+This script imports a pre-trained image classification model and evaluates its performance using precision, recall, 
+and binary accuracy metrics on a test dataset. It uses TensorFlow/Keras metrics for evaluation.
 
-Steps:
-    1. Initialize the ImageModel.
-    2. Load the trained model from the ImageModel instance.
-    3. Initialize precision, recall, and accuracy metrics.
-    4. Initialize DataHandler to load and preprocess the test data.
-    5. Split the test data into batches.
-    6. Iterate through the test data batches:
-        - Make predictions using the model.
-        - Update the metrics with the true labels and predicted values.
-    7. Print the calculated precision, recall, and accuracy metrics.
+Dependencies:
+    - TensorFlow (imported as tf)
+    - Keras metrics: Precision, Recall, BinaryAccuracy (imported from keras.metrics)
+
+Usage:
+    - Ensure that the trained model and the test dataset are available.
+    - Update the paths to the model and dataset if necessary.
+    - Run the script to evaluate the model's performance.
+
+Example:
+    python evaluate_image_model.py
 
 Note:
-    - The test data is assumed to be in the 'data/images' directory.
-    - The ImageModel and DataHandler classes are custom implementations for image classification tasks.
+    - This script assumes that the model is pre-trained and available for evaluation.
+    - It assumes that the test dataset has been preprocessed and is ready for evaluation.
+    - The script evaluates the model's performance on the entire test dataset.
 """
 
 image_model = ImageModel()

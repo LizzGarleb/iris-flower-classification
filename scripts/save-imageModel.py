@@ -2,20 +2,27 @@ from modules.imageModel.imageModel import ImageModel
 from modules.imageModel.dataHandler import DataHandler
 
 """
-This script demonstrates the process of training an image classification model using the ImageModel class.
-It initializes a DataHandler to load and split the data, then trains the ImageModel using the loaded data.
-The trained model is saved along with its training history, and the accuracy and loss plots are displayed.
+Script for training an image classification model and saving the trained model and training history.
 
-Steps:
-    1. Initialize a DataHandler to manage image data.
-    2. Split the data into training, validation, and test sets.
-    3. Initialize an ImageModel.
-    4. Compile and train the ImageModel using the training and validation data.
-    5. Save the trained model and its history to a specified path.
-    6. Display the accuracy and loss plots based on the training history.
+This script utilizes an ImageModel class and a DataHandler class to preprocess the image data, 
+train an image classification model, and save both the trained model and its training history.
+
+Dependencies:
+    - ImageModel and DataHandler classes (imported from modules.imageModel.imageModel and modules.imageModel.dataHandler)
+    
+Usage:
+    - Ensure that the image data directory ('data/images') contains the training images organized in subdirectories by class.
+    - Run the script to preprocess the data, train the model, and save the trained model and training history.
+    
+Example:
+    python train_and_save_model.py
+
+Note:
+    - This script assumes that the ImageModel class and the DataHandler class are correctly implemented 
+      and available in the specified modules.
+    - The trained model and its training history are saved to the specified file paths.
 """
 
-# Initialize DataHandler
 data_handler = DataHandler(directory='data/images')
 
 train_data, val_data, test_data = data_handler.split_data()
