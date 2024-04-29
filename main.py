@@ -6,7 +6,6 @@ tm = TextModel()
 im = ImageModel()
 
 while True:
-    print('Initialize\n')
     initial_msg = input(
         f"\nWould you like to import a file? If yes, type 'csv' for CSV file or 'img' for image file. Enter 'n' to manually input data or 'q' to quit: \n")
     
