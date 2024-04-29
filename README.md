@@ -1,4 +1,5 @@
 # Iris Flower Classification
+![Types of Iris Flower](https://github.com/LizzGarleb/iris-flower-classification/assets/96942307/c7968a93-bba9-40c4-9330-f918c19a9dc2)
 
 
 ## Table of Contents
@@ -47,5 +48,16 @@ Explain how to use the project. Include code examples and screenshots if possibl
 After you've installed the project, you can run it using Python. Here's a basic example:
 ```python3 main.py```
 
+![Usage](https://github.com/LizzGarleb/iris-flower-classification/assets/96942307/6d04fbf7-a235-42fa-ba35-4672e42338da)
+
 ## Results 🧮
 
+### **Image Model Loss**
+![ModelLoss](https://github.com/LizzGarleb/iris-flower-classification/assets/96942307/5f5bd7ec-9459-44d5-8ea6-6f1ed62a1d7a)
+
+### **Image Model Accuracy**
+![ModelAccuracy](https://github.com/LizzGarleb/iris-flower-classification/assets/96942307/8ae31e3d-b705-4790-a6a8-8f9046c5d1ba)
+
+### **Image Model Classification**
+![Model Prediction](https://github.com/LizzGarleb/iris-flower-classification/assets/96942307/e985cf28-eadb-4b6e-bb10-97a0b8a5323d)
+* 0 is Setosa & 1 is Versicolor
