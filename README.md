@@ -1,4 +1,5 @@
 # Iris Flower Classification
+[![Pitch Document](https://img.shields.io/badge/PROJECT_PITCH-important?style=for-the-badge)](./Project-Pitch.pdf)
 ![Types of Iris Flower](https://github.com/LizzGarleb/iris-flower-classification/assets/96942307/c7968a93-bba9-40c4-9330-f918c19a9dc2)
 
 
