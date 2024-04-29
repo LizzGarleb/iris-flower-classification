@@ -1,14 +1,17 @@
+import tensorflow as tf
 from modules.textModel.textModel import TextModel
 from modules.imageModel.imageModel import ImageModel
 
-while True:
-    tm = TextModel()
-    im = ImageModel()
+tm = TextModel()
+im = ImageModel()
 
+while True:
+    print('Initialize\n')
     initial_msg = input(
         f"\nWould you like to import a file? If yes, type 'csv' for CSV file or 'img' for image file. Enter 'n' to manually input data or 'q' to quit: \n")
     
     if initial_msg.lower() == 'csv':
+        list = None
         list = tm.csv_input()
         flower_names = tm.predict(list)
         print(flower_names)
